@@ -1,11 +1,11 @@
-package com.zakharov.SpringJPA.service;
+package com.zakharov.springproject.service;
 
-import com.zakharov.SpringJPA.dto.WorkerDto;
-import com.zakharov.SpringJPA.entity.Worker;
-import com.zakharov.SpringJPA.entity.WorkerInfo;
-import com.zakharov.SpringJPA.logger.Logger;
-import com.zakharov.SpringJPA.repository.WorkerInfoRepository;
-import com.zakharov.SpringJPA.repository.WorkerRepository;
+import com.zakharov.springproject.dto.WorkerDto;
+import com.zakharov.springproject.entity.Worker;
+import com.zakharov.springproject.entity.WorkerInfo;
+import com.zakharov.springproject.logger.Logger;
+import com.zakharov.springproject.repository.WorkerInfoRepository;
+import com.zakharov.springproject.repository.WorkerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;

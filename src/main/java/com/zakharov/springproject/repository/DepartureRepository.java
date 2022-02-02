@@ -1,6 +1,6 @@
-package com.zakharov.SpringJPA.repository;
+package com.zakharov.springproject.repository;
 
-import com.zakharov.SpringJPA.entity.Departure;
+import com.zakharov.springproject.entity.Departure;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

@@ -1,19 +1,19 @@
-package com.zakharov.SpringJPA.dto;
+package com.zakharov.springproject.dto;
 
+
+import com.zakharov.springproject.entity.WorkerInfo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
-import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-public class DepartureDto {
-
+public class WorkerDto {
     private int id;
     private String name;
-    private String location;
-    private List<String> workersName;
+    private double salary;
+    private WorkerInfo workerInfo;
 }

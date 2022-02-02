@@ -1,19 +1,23 @@
-package com.zakharov.SpringJPA.dto;
+package com.zakharov.springproject.entity;
 
-
-import com.zakharov.SpringJPA.entity.WorkerInfo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-public class WorkerDto {
+@Entity
+public class WorkerInfo {
+
+    @Id
     private int id;
-    private String name;
-    private double salary;
-    private WorkerInfo workerInfo;
+    private int age;
+    private String homeAddress;
+
 }

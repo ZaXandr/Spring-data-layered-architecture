@@ -1,4 +1,4 @@
-package com.zakharov.SpringJPA;
+package com.zakharov.springproject;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

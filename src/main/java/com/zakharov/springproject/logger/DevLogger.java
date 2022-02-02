@@ -1,4 +1,4 @@
-package com.zakharov.SpringJPA.logger;
+package com.zakharov.springproject.logger;
 
 public class DevLogger implements Logger {
     @Override

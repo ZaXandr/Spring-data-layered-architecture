@@ -1,4 +1,4 @@
-package com.zakharov.SpringJPA.entity;
+package com.zakharov.springproject.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

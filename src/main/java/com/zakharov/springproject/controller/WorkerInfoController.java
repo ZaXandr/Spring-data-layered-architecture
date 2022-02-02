@@ -1,7 +1,7 @@
-package com.zakharov.SpringJPA.controller;
+package com.zakharov.springproject.controller;
 
-import com.zakharov.SpringJPA.entity.WorkerInfo;
-import com.zakharov.SpringJPA.service.WorkerInfoService;
+import com.zakharov.springproject.entity.WorkerInfo;
+import com.zakharov.springproject.service.WorkerInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

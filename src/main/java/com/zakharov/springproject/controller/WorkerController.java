@@ -1,10 +1,9 @@
-package com.zakharov.SpringJPA.controller;
+package com.zakharov.springproject.controller;
 
-import com.zakharov.SpringJPA.dto.WorkerDto;
-import com.zakharov.SpringJPA.entity.Departure;
-import com.zakharov.SpringJPA.entity.Worker;
-import com.zakharov.SpringJPA.entity.WorkerInfo;
-import com.zakharov.SpringJPA.service.WorkerService;
+import com.zakharov.springproject.dto.WorkerDto;
+import com.zakharov.springproject.entity.Worker;
+import com.zakharov.springproject.entity.WorkerInfo;
+import com.zakharov.springproject.service.WorkerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -50,5 +49,4 @@ public class WorkerController {
     public Worker updateWorkerInfo(@RequestBody WorkerInfo workerInfo, @PathVariable int id){
         return workerService.updateWorkerInfo(workerInfo,id);
     }
-
 }

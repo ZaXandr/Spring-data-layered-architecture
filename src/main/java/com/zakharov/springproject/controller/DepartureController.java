@@ -1,8 +1,8 @@
-package com.zakharov.SpringJPA.controller;
+package com.zakharov.springproject.controller;
 
-import com.zakharov.SpringJPA.dto.DepartureDto;
-import com.zakharov.SpringJPA.entity.Departure;
-import com.zakharov.SpringJPA.service.DepartureService;
+import com.zakharov.springproject.dto.DepartureDto;
+import com.zakharov.springproject.entity.Departure;
+import com.zakharov.springproject.service.DepartureService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

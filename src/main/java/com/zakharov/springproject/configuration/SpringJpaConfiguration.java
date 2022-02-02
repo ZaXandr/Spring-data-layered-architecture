@@ -1,9 +1,9 @@
-package com.zakharov.SpringJPA.configuration;
+package com.zakharov.springproject.configuration;
 
-import com.zakharov.SpringJPA.logger.DevLogger;
-import com.zakharov.SpringJPA.logger.Logger;
-import com.zakharov.SpringJPA.logger.ProdLogger;
-import com.zakharov.SpringJPA.logger.TestLogger;
+import com.zakharov.springproject.logger.DevLogger;
+import com.zakharov.springproject.logger.Logger;
+import com.zakharov.springproject.logger.ProdLogger;
+import com.zakharov.springproject.logger.TestLogger;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package com.zakharov.SpringJPA.entity;
+package com.zakharov.springproject.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

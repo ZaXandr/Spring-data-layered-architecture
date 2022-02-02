@@ -1,4 +1,4 @@
-package com.zakharov.SpringJPA.logger;
+package com.zakharov.springproject.logger;
 
 public interface Logger {
     void logMessage(String message);
