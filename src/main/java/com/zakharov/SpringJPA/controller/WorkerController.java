@@ -1,5 +1,6 @@
 package com.zakharov.SpringJPA.controller;
 
+import com.zakharov.SpringJPA.dto.WorkerDto;
 import com.zakharov.SpringJPA.entity.Departure;
 import com.zakharov.SpringJPA.entity.Worker;
 import com.zakharov.SpringJPA.entity.WorkerInfo;
@@ -21,8 +22,13 @@ public class WorkerController {
     }
 
     @GetMapping("/worker/{id}")
-    public Worker getWorker(@PathVariable int id){
+    public Worker getWorkerById(@PathVariable int id){
         return workerService.getWorkerById(id);
+    }
+
+    @GetMapping("/worker/name/{name}")
+    public WorkerDto GetWorkerByName(@PathVariable String name){
+        return workerService.getWorkerByName(name);
     }
 
     @GetMapping("/worker/departure/{id}")
