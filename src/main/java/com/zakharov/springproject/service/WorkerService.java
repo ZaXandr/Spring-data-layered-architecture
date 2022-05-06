@@ -3,9 +3,12 @@ package com.zakharov.springproject.service;
 import com.zakharov.springproject.dto.WorkerDto;
 import com.zakharov.springproject.entity.Worker;
 import com.zakharov.springproject.entity.WorkerInfo;
+import com.zakharov.springproject.exception.WorkerNotFoundException;
 import com.zakharov.springproject.logger.Logger;
+import com.zakharov.springproject.mapper.WorkerMapper;
 import com.zakharov.springproject.repository.WorkerInfoRepository;
 import com.zakharov.springproject.repository.WorkerRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,16 +18,13 @@ import java.util.Objects;
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class WorkerService {
 
-    @Autowired
-    WorkerRepository workerRepository;
-
-    @Autowired
-    WorkerInfoRepository workerInfoRepository;
-
-    @Autowired
-    Logger logger;
+    private final WorkerRepository workerRepository;
+    private final WorkerInfoRepository workerInfoRepository;
+    private final WorkerMapper workerMapper;
+    private final Logger logger;
 
     public List<Worker> getWorkers() {
         return workerRepository.findAll();
@@ -32,9 +32,9 @@ public class WorkerService {
 
     public Worker getWorkerById(int id) {
         if (workerRepository.findById(id).isEmpty()) {
-            logger.logMessage(String.format("No such worker with id: %s" , id));
+            logger.logMessage(String.format("No such worker with id: %s", id));
             return null;
-        }else {
+        } else {
             return workerRepository.getById(id);
         }
     }
@@ -55,14 +55,19 @@ public class WorkerService {
 
     public WorkerDto getWorkerByName(String name) {
         Worker worker = workerRepository.findByName(name);
-        WorkerInfo info = workerInfoRepository.findWorkerInfoById(worker.getId());
-
-        WorkerDto workerDto = new WorkerDto()
-                .setId(worker.getId())
-                .setName(worker.getName())
-                .setSalary(worker.getSalary())
-                .setWorkerInfo(info);
-        return workerDto;
+        if (!Objects.isNull(worker)) {
+            WorkerInfo info = workerInfoRepository.findWorkerInfoById(worker.getId());
+            WorkerDto workerDto = workerMapper.toDto(worker);
+            if (!Objects.isNull(info)) {
+                workerDto.setWorkerInfo(info);
+            }else{
+                logger.logMessage(String.format("No info about worker with id: %d",worker.getId()));
+            }
+            return workerDto;
+        } else {
+            logger.logMessage(String.format("No worker with name: %s", name));
+            throw new WorkerNotFoundException("Worker with name:", name);
+        }
     }
 
 
